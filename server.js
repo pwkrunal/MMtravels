@@ -1,6 +1,7 @@
 var express = require('express');
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
+var port = process.env.PORT || 8080;
 var transporter;
 var app = express();
 app.use(bodyParser.json()); // support json encoded bodies
@@ -32,7 +33,7 @@ app.post('/api/booking', function(req, res) {
     });
     res.send('good');
 });
-var server = app.listen(8081, function() {
+var server = app.listen(port, function() {
     var host = server.address().address
     var port = server.address().port
 
