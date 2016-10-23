@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MM Travels</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    label.error {
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Welcome to <span style="color:#EB840B">Madhumalti</span> Travels</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/image.jpeg" class="img-responsive">
+                </div>
+                <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+ -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <div class="modal fade" id="successModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Booking Successful.</h4>
+                    <p> Thank you for choosing <span style="color:#EB840B">MadhuMalti</span> travels. Our representative will contact you soon..</p>
+                    <p> Helpline number : <b>9964505885</b></p>
+                </div>
+                <!-- <div class="modal-body">
+    <img src="/assets/image.jpeg" class="img-responsive">
+</div>
+ -->
+                <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+ -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+ -->
+                <a class="navbar-brand" href="#">
+                    <img src="assets/travel_logo.png" width="230px" style="margin-top: 7px" class="img-responsive" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#">Services</a>
+        </li>
+        <li>
+            <a href="#">Contact</a>
+        </li>
+    </ul>
+</div>
+ -->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="assets/cars.jpeg" alt="">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h1><span style="color:#EB840B">M</span><span style="color:#797878">adhu</span><span style="color:#EB840B">M</span><span style="color:#797878">alti Travels</span></h1>
+                <p>Madhumalti travels is an online cab booking aggregator that aims to provide affordable and safe taxi services to travelers. With operations across Karnataka and Maharastra in India including Bangalore, Mumbai, Sangli, Miraj, Kolhapur, Pune etc. MM travels provides cabs for outstation travel as well as intracity local cabs. You can travel unlimited kilometres for Rs.8/Km and Rs.10/Km without any restriction on the kilometres travelled.</p>
+                <!-- <a class="btn btn-primary btn-lg" href="#">Book your Cab</a> -->
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+        <hr>
+        <!-- Call to Action Well -->
+        <!-- /.row -->
+        <!-- Content Row -->
+        <form id="booking_form" method="POST" action="/api/booking">
+            <!--<div class="col-md-4">
+               <div>
+                    <p>Please enter the below details to book the car.</p>
+                    
+                </div> -->
+            <div class="form-group">
+                <p><b>Please enter the below details to book the car.</p>
+            </div>
+            <div class="form-group">
+                <label for="car_name">Name :</label>
+                <input type=" text " class="form-control " name="car_name" id="car_name">
+            </div>
+            <div class="form-group">
+                <label for="car_from">From :</label>
+                <input type="text" class="form-control" data-provide="typeahead" name="car_from" autocomplete="off" spellcheck="false" id="car_from">
+                <!-- <input type="search" placeholder="Search..." data-provide="typeahead" />
+<input type="text" id="service" placeholder="Services" autocomplete="off" data-provide="typeahead" />
+ -->
+            </div>
+            <div class="form-group">
+                <label for="car_to">To</label>
+                <input type=" text " class="form-control " name="car_to" id="car_to" value="">
+            </div>
+            <div class="form-group ">
+                <!-- <label for="car_date ">Date of Journey</label>
+                <input type="date " class="form-control " id="car_date " placeholder="23-10-2016"> -->
+                <!-- <div class="input-group date" data-provide="datepicker">
+    <input type="text" id="car_date" class="form-control" class="datepicker">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+ -->
+                <!--   <label for="car_date">Date</label>
+                <input type="text" value="02-16-2012" id="car_date"> -->
+                <label for="car_date">Date :</label>
+                <input type=" text " class="form-control " name="car_date" id="car_date" value="">
+            </div>
+            <div class="form-group ">
+                <label for="car_seat ">Number of seats :</label>
+                <select class="form-control " name="car_seat" id="car_seat ">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="car_mobileNumber">Mobile Number:</label>
+                <input type="text" class="form-control" name="car_mobileNumber" maxlength="10" id="car_mobileNumber" value="">
+            </div>
+            <fieldset class="form-group">
+                <label>Halt</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="car_halt" id="optionsRadios1" value="yes"> Yes
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="car_halt" id="optionsRadios2" value="no" checked> No
+                    </label>
+                </div>
+            </fieldset>
+            <hr>
+            <button type=" submit " class="btn btn-primary "  style="background:#EB840B;color:#000000">Confirm Booking</button>
+        </form>
+        <!-- /.row -->
+        <!-- Footer -->
+        <footer>
+            <div class="row ">
+                <div class="col-lg-12 ">
+                    <p>Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <!-- <script src="js/jquery.js "></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js "></script>
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js "></script>
+    <script src="js/jquery.validate.min.js "></script>
+    <script src="js/additional-methods.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
+    <script src="js/custom.js "></script>
+    <script type="text/javascript ">
+    // $.fn.datepicker.defaults.format = "mm/dd/yyyy ";
+    var date = new Date();
+    date.setDate(date.getDate() - 1);
+    $('#car_date').datepicker({
+        format: 'dd/mm/yyyy',
+        startDate: date
+    });
+    $('#car_date').datepicker('setDate', date);
+    $('#car_date').datepicker('update');
+    $(document).ready(function() {
+        $("#car_from").typeahead({
+            source: ['Ugar-KH', 'Ugar-BK', 'Kudachi', 'Ainapur'],
+            minLength: 1
+        });
+        $('#car_from').val('Ugar-KH');
+    });
+    // $('#exampleModal').modal('show');
+    </script>
+</body>
+
+</html>
