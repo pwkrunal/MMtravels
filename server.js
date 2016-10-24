@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 app.post('/api/booking', function(req, res) {
     var text = '\n\n Name : ' + req.body.car_name + '\n\n From : ' + req.body.car_from + '\n\n To : ' + req.body.car_to + '\n\n Date : ' + req.body.car_date + '\n\n Seat : ' + req.body.car_seat + '\n\n Mobile : ' + req.body.car_mobileNumber + '\n\n Halt : ' + req.body.car_halt;
     var mailOptions = {
-        from: 'krunalpawar90@gmail.com', // sender address
+        from: 'krunaltestbooking@yahoo.com', // sender address
         to: 'vishukamble24@gmail.com', // list of receivers vishukamble24@gmail.com
         subject: 'MM Travels booking confirmation', // Subject line
         text: text //, // plaintext body
@@ -39,10 +39,10 @@ var server = app.listen(port, function() {
 
     console.log("Example app listening at http://%s:%s", host, port);
     transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        service: 'Yahoo',
         auth: {
-            user: 'krunalpawar90@gmail.com', // Your email id
-            pass: 'lanurk@1990' // Your password
+            user: 'krunaltestbooking@yahoo.com', // Your email id
+            pass: 'Welcome@1' // Your password
         }
     });
 
